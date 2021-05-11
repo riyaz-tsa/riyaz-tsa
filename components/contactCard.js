@@ -1,39 +1,17 @@
 import React from 'react';
 import {View, Image, Text, TouchableOpacity} from 'react-native';
+import style from '../style/style';
+import Colors from './colors';
 
 const ContactCard = props => {
   return (
-    <View
-      style={{
-        backgroundColor: 'white',
-        borderRadius: 10,
-        margin: 20,
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 10,
-        },
-        shadowOpacity: 0.12,
-        shadowRadius: 10,
-        elevation: 10,
-      }}>
+    <View style={style.cardBox}>
       <View style={{flexDirection: 'row'}}>
-        <Image
-          source={props.imageSource}
-          style={{
-            width: 65,
-            height: 65,
-            margin: 10,
-            borderRadius: 65 / 2,
-            backgroundColor: 'black',
-          }}></Image>
+        <Image source={props.imageSource} style={style.circleAvtar} />
         <View style={{justifyContent: 'center'}}>
           <View style={{flexDirection: 'row'}}>
             <View>
-              <Text
-                style={{fontWeight: 'bold', fontSize: 18, paddingVertical: 5}}>
-                {props.name}
-              </Text>
+              <Text style={style.userName}>{props.name}</Text>
             </View>
 
             <View
@@ -43,30 +21,12 @@ const ContactCard = props => {
 
                 left: 210,
               }}>
-              <View
-                style={{
-                  backgroundColor: '#c8d6e5',
-                  width: 30,
-                  height: 30,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  borderRadius: 5,
-                  margin: 5,
-                }}>
+              <View style={style.socialW}>
                 <Image
                   source={require('../assets/whatsapp.png')}
                   style={{width: 20, height: 20}}></Image>
               </View>
-              <View
-                style={{
-                  backgroundColor: '#c8d6e5',
-                  width: 30,
-                  height: 30,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  borderRadius: 5,
-                  margin: 5,
-                }}>
+              <View style={style.socialP}>
                 <Image
                   source={require('../assets/telephone.png')}
                   style={{width: 20, height: 20}}></Image>
@@ -101,38 +61,16 @@ const ContactCard = props => {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          borderBottomColor: '#c8d6e5',
-          borderBottomWidth: 1,
-          marginTop: 15,
-          marginHorizontal: 20,
-          marginVertical: 5,
-        }}
-      />
+      <View style={style.divider} />
       <View
         style={{justifyContent: 'flex-end', flexDirection: 'row', padding: 10}}>
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#feca57',
-            margin: 5,
-            width: 100,
-            height: 40,
-            borderRadius: 15,
-            justifyContent: 'center',
-          }}>
+        <TouchableOpacity style={style.followbtn}>
           <Text style={{alignSelf: 'center'}}>Follow</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            backgroundColor: 'black',
-            margin: 5,
-            width: 100,
-            height: 40,
-            borderRadius: 15,
-            justifyContent: 'center',
-          }}>
-          <Text style={{alignSelf: 'center', color: '#feca57'}}>Block</Text>
+        <TouchableOpacity style={style.blockbtn}>
+          <Text style={{alignSelf: 'center', color: Colors.primary}}>
+            Block
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

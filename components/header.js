@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StatusBar, Image} from 'react-native';
+import {View, Text, StatusBar, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default AppBar = () => {
@@ -27,7 +27,13 @@ export default AppBar = () => {
             justifyContent: 'space-between',
           }}>
           <Icon size={25} name="arrow-back" />
-          <Text style={{fontWeight: 'bold', alignSelf: 'center', fontSize: 20}}>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              alignSelf: 'center',
+              fontSize: 20,
+              marginHorizontal: 10,
+            }}>
             Find Members
           </Text>
         </View>
@@ -36,15 +42,18 @@ export default AppBar = () => {
             flexDirection: 'row',
             marginVertical: 10,
           }}>
-          <Image
-            source={require('../assets/menu.png')}
-            style={{width: 30, height: 18, margin: 10}}
-          />
-
-          <Image
-            source={require('../assets/location.png')}
-            style={{width: 25, height: 25, margin: 10}}
-          />
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/menu2.png')}
+              style={{width: 30, height: 18, margin: 10}}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/location.png')}
+              style={{width: 26, height: 26, margin: 10}}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
